@@ -8,6 +8,7 @@
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
+  Button,
   ScrollView,
   StatusBar,
   StyleSheet,
@@ -71,6 +72,9 @@ function App(): React.JSX.Element {
    * https://github.com/react-native-community/discussions-and-proposals/discussions/827
    */
   const safePadding = '5%';
+  const handler = () => {
+    console.log('Button Pressed');
+  };
 
   return (
     <View style={backgroundStyle}>
@@ -88,6 +92,7 @@ function App(): React.JSX.Element {
             paddingHorizontal: safePadding,
             paddingBottom: safePadding,
           }}>
+          <Button title="Hello" onPress={handler}></Button>
           <Section title="Step 1">AAA</Section>
           <Section title="Step 2">
             <ReloadInstructions />
